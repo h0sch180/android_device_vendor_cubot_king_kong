@@ -1,0 +1,19 @@
+diff --git a/rootdir/ueventd.rc b/rootdir/ueventd.rc
+index d16e02f..4ca3b68 100644
+--- a/rootdir/ueventd.rc
++++ b/rootdir/ueventd.rc
+@@ -103,5 +103,14 @@ subsystem adf
+ /sys/devices/system/cpu/cpu*   cpufreq/scaling_max_freq   0664  system system
+ /sys/devices/system/cpu/cpu*   cpufreq/scaling_min_freq   0664  system system
+ 
++#led patch begin
++/sys/devices/platform/leds-mt65xx/leds/green   delay_on      0664  system   system
++/sys/devices/platform/leds-mt65xx/leds/green   delay_off      0664  system   system
++/sys/devices/platform/leds-mt65xx/leds/red   delay_on      0664  system   system
++/sys/devices/platform/leds-mt65xx/leds/red   delay_off      0664  system   system
++/sys/devices/platform/leds-mt65xx/leds/blue   delay_on      0664  system   system
++/sys/devices/platform/leds-mt65xx/leds/blue   delay_off      0664  system   system
++#led patch end
++
+ # DVB API device nodes
+ /dev/dvb*                 0660   root       system
